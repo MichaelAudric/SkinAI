@@ -56,7 +56,7 @@ async def predict(
         f.write(content)
 
     # ---------------------
-    # PREPROCESS + PREDICT
+    # PREPROCESS + PREDICT.
     # ---------------------
     img_array = preprocess_image(file_path)
     result = predict_image(img_array)
