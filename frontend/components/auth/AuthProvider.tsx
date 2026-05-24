@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { useAuthStore } from "@/store/auth";
+import { apiFetch } from "@/lib/api";
 
 export default function AuthProvider({
   children,
@@ -11,7 +12,7 @@ export default function AuthProvider({
   const setUser = useAuthStore((s) => s.setUser);
 
   useEffect(() => {
-    fetch("http://localhost:8000/me", {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/me`, {
       credentials: "include",
     })
       .then((res) => {
