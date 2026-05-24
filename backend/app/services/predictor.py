@@ -7,7 +7,7 @@ CLASS_NAMES = ["nv", "mel", "bkl", "bcc", "akiec", "vasc", "df"]
 
 def predict_image(img_array):
     """
-    img_array: preprocessed numpy array (1, H, W, 3)
+    img_array: preprocessed numpy array (1, H, W, 3).
     """
 
     preds_v8 = model_v8.predict(img_array, verbose=0)
