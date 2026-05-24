@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { useAuthStore } from "@/store/auth";
-import { apiFetch } from "@/lib/api";
 
 export default function AuthProvider({
   children,
