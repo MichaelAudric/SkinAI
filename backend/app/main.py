@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import app.core.cloudinary_config
 
 app = FastAPI(title="Skin Disease AI Backend")
-#
+#a
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
