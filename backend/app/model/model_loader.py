@@ -69,26 +69,26 @@ def build_v11():
 # MODEL V14 (EfficientNetB3 + L2)
 # =========================================================
 
-def build_v14():
-    base_model = EfficientNetB3(
-        weights=None,
-        include_top=False,
-        input_shape=TARGET_SIZE + (3,)
-    )
+# def build_v14():
+#     base_model = EfficientNetB3(
+#         weights=None,
+#         include_top=False,
+#         input_shape=TARGET_SIZE + (3,)
+#     )
 
-    x = base_model.output
-    x = GlobalAveragePooling2D()(x)
-    x = BatchNormalization()(x)
-    x = Dropout(0.4)(x)
-    x = Dense(
-        256,
-        activation="relu",
-        kernel_regularizer=regularizers.l2(1e-4)
-    )(x)
-    x = Dropout(0.3)(x)
-    output = Dense(NUM_CLASSES, activation="softmax")(x)
+#     x = base_model.output
+#     x = GlobalAveragePooling2D()(x)
+#     x = BatchNormalization()(x)
+#     x = Dropout(0.4)(x)
+#     x = Dense(
+#         256,
+#         activation="relu",
+#         kernel_regularizer=regularizers.l2(1e-4)
+#     )(x)
+#     x = Dropout(0.3)(x)
+#     output = Dense(NUM_CLASSES, activation="softmax")(x)
 
-    return Model(inputs=base_model.input, outputs=output)
+#     return Model(inputs=base_model.input, outputs=output)
 
 
 # =========================================================
@@ -101,7 +101,7 @@ model_v8.load_weights(WEIGHTS_V8)
 model_v11 = build_v11()
 model_v11.load_weights(WEIGHTS_V11)
 
-model_v14 = build_v14()
-model_v14.load_weights(WEIGHTS_V14)
+# model_v14 = build_v14()
+# model_v14.load_weights(WEIGHTS_V14)
 
 

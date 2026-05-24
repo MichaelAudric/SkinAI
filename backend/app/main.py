@@ -9,7 +9,7 @@ app = FastAPI(title="Skin Disease AI Backend")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://skin-ai-phi.vercel.app",
+        "https://skin-ai-phi.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],

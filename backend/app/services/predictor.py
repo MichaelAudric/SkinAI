@@ -14,7 +14,9 @@ def predict_image(img_array):
     preds_v14 = model_v14.predict(img_array, verbose=0)
 
     # average probabilities (soft voting)
-    preds = (preds_v8 + preds_v11 + preds_v14) / 3.0
+    # preds = (preds_v8 + preds_v11 + preds_v14) / 3.0
+    preds = (preds_v8 + preds_v11) / 2.0
+
 
     class_index = np.argmax(preds)
     confidence = float(np.max(preds))
