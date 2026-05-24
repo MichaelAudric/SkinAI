@@ -50,8 +50,8 @@ def register(
         key="access_token",
         value=token,
         httponly=True,
-        secure=False,   # set True in production (HTTPS)
-        samesite="lax"
+        secure=True,   # set True in production (HTTPS)
+        samesite="none"
     )
 
     return {
